@@ -1,0 +1,28 @@
+{% load static %}
+<header>
+    <h1>
+        <a href="{% url 'web:index' %}">
+            <img
+                src="{% static 'assets/images/onlinestore.png' %}"
+                alt="Logo"
+                style="width:25% ;"
+            />
+        </a>
+    </h1>
+    <div>
+        {% if request.user.is_staff %}
+        <a href="{% url 'products:create_product' %}" class="btn btn-dark">Create</a> 
+        <a href="{%url 'users:logout' %}" class="btn btn-danger"> Logout </a>
+        {% endif %}
+        {% if request.user.is_authenticated and not request.user.is_staff %}
+        <h6>{{request.user}}</h6>
+        <a href="{% url 'products:view_cart' %}" class="btn btn-dark"> Cart </a>
+        <a href="{%url 'users:logout' %}" class="btn btn-danger"> Logout </a>
+        {% else %}
+        {% if not request.user.is_staff %}
+        <a href="{%url 'users:login' %}" class="btn btn-success"> Login </a>
+        {% endif %}
+        {% endif %} 
+
+    <div>
+</header>

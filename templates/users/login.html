@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="wrapper">
+    {% include 'includes/header.html' %}
+    <div class="container">
+        <form action="/users/login/" method="post">
+            {% csrf_token %}
+            <label for="">User Name</label><br />
+            <input
+                type="text"
+                value=""
+                placeholder="Phone Number"
+                name="username"
+                required
+                class="form-control"
+            />
+            <label for="">Password</label><br />
+            <div class="password">
+                <input
+                    type="password"
+                    value=""
+                    placeholder="Password"
+                    name="password"
+                    required
+                    class="form-control"
+                />
+            </div>
+            {%if error %}
+            <p class="error" style="color: red">{{message}}</p>
+            {% endif %} {% if message %}
+            <small>{{message}}</small>
+            {% else %}
+            <p class="register">
+                Don't have account <a href="{% url 'users:signup' %}">Register</a>
+            </p>
+            {% endif %}
+            <button type="submit" class="btn btn-success">Log In</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

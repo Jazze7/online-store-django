@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="cart">
+    <h1>Cart</h1>
+    <div class="wrapper">
+        {% for item in cart %}
+        <div class="items">
+            <div class="left">
+                <div class="img">
+                    <img src="{{item.product.image.url}}" alt="" />
+                </div>
+            </div>
+            <div class="right">
+                <h4>{{item.product.name}}</h4>
+                <h6>{{item.product.price}}</h6>
+                <span>Quantity:{{item.quantity}}</span>
+                <p>Total Price: {{ item.total_price }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

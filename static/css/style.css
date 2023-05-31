@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: transparent;
+    font-weight: normal;
+    text-decoration: none;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+body {
+    font-family: "SansRegular", Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #000;
+    overflow-x: hidden;
+    min-width: 320px;
+    font-weight: 500;
+}
+
+input,
+textarea,
+select {
+    font-family: "SansRegular", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.thumb {
+    display: block;
+}
+
+.thumb img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+p {
+    line-height: 1.6em;
+    font-size: 16px;
+    font-family: "SansRegular", Arial;
+    font-weight: 500;
+    color: #000;
+}
+
+.blur {
+    backdrop-filter: blur(10px) !important;
+    background: #000 !important;
+}
+
+@font-face {
+    font-family: "Gordita Regular";
+    src: url("../assets/fonts/DMSans-Regular.woff2") format("woff2"),
+        url("../assets/fonts/Gordita-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gordita Bold";
+    src: url("../assets/fonts/Gordita-Bold.woff2") format("woff2"),
+        url("../assets/fonts/Gordita-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gordita Medium";
+    src: url("../assets/fonts/Gordita-Medium.woff2") format("woff2"),
+        url("../assets/fonts/Gordita-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SansBold";
+    src: url("../assets/fonts/DMSans-Bold.woff2") format("woff2"),
+        url("../assets/fonts/DMSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SansMedium";
+    src: url("../assets/fonts/DMSans-Medium.woff2") format("woff2"),
+        url("../assets/fonts/DMSans-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SansRegular";
+    src: url("../assets/fonts/DMSans-Regular.woff2") format("woff2"),
+        url("../assets/fonts/DMSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+.form-control,
+.form-group {
+    margin-bottom: 20px
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.home {
+    display: flex;
+    gap: 30px;
+}
+
+#cart h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+#cart .wrapper .items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart .wrapper .items .left {
+    width: 50%;
+
+}
+
+#cart .wrapper .items .left .img {
+    width: 30%;
+}
+
+#cart .wrapper .items .right {
+    width: 60%;
+}
+
+#cart .wrapper .items .right h4 {
+    font-size: 20px;
+}
+
+#cart .wrapper .items .right h6 {
+    font-size: 16px;
+}
+
+#cart .wrapper .items .right span {
+    font-size: 12px;
+}

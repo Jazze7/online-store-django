@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="wrapper">
+    {% include 'includes/header.html' %}
+    <div class="home">
+        {% for instance in instances %}
+        <a href="{%  url 'products:edit_product' id=instance.id  %}">
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top" src="{{instance.image.url}}" alt="Card image cap" />
+                <div class="card-body">
+                    <h4 class="card-title">{{instance.name}}</h4>
+                    <h6 class="card-text">INR{{instance.price}}</h6>
+                    {% if not request.user.is_staff %}
+                    <a
+                        href="{% url 'products:add_to_cart'  id=instance.id %}"
+                        class="btn btn-primary"
+                        >Add to cart</a
+                    >
+                    {% endif %} {% if request.user.is_staff %}
+                    <a
+                        href="{% url 'products:delete_product' id=instance.id %}"
+                        class="btn btn-danger action-button reload"
+                        data-text="Are you sure want to remove this post. You can't undo this action."
+                        data-title="Confirm Delete!"
+                        title="Delete!"
+                        >Delete</a
+                    >
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="wrapper">
+  {% include 'includes/header.html' %}
+  <div class="container">
+    <form action="" method="post" enctype="multipart/form-data" class="ajax redirect">
+      {% csrf_token %}
+      <!-- <label for="">Name</label><br />
+      <input type="text" value="input" placeholder="enter the name" name="name" required class="form-control" />
+      <label for="">Price</label><br />
+      <input type="text" value="" placeholder="enter the price" name="price" required class="form-control" />
+      <label for="">Quantity</label><br />
+      <input type="text" value="" placeholder="enter the quantity" name="quantity" required class="form-control" />
+      <label for="">Image</label><br />
+      <input type="file" value="" placeholder="Phone Number" name="image" required class="form-control" /> -->
+
+
+
+
+
+      <label for="{form.name.id_for_label}"> {{form.name.label}} </label>
+      {{form.name}}
+
+
+      <label for="{form.price.id_for_label}"> {{form.price.label}} </label>
+      {{form.price}}
+
+
+      <label for="{form.quantity.id_for_label}"> {{form.quantity.label}} </label>
+      {{form.quantity}}
+
+      <label for="{form.image.id_for_label}"> {{form.image.label}} </label>
+      {{form.image}}
+
+      <input type="submit" value="Submit" class="btn btn-success" />
+
+  </div>
+  </form>
+</div>
+</div>
+
+{% endblock %}

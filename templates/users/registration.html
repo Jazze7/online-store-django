@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block content %}{% include 'includes/header.html' %}
+<div class="container">
+    <h1 style="text-align: center">Register here</h1>
+    <form
+        action="{% url 'users:signup' %}"
+        method="post"
+        style="display: flex; flex-direction: column; width: 60%; margin: 0 auto"
+    >
+        {% csrf_token %}
+        <label for="{{form.first_name.id_for_label}}">{{form.first_name.label}}</label>
+        {{form.first_name}}
+        <label for="{{form.email.id_for_label}}">{{form.email.label}}</label>
+        {{form.email}}
+        <label for="{{form.username.id_for_label}}">{{form.username.label}}</label>
+        {{form.username}} {% for error in form.username.errors %}
+        <small style="color: red">{{ error }}</small>
+        {% endfor %}
+        <label for="{{form.password.id_for_label}}">{{form.password.label}}</label>
+        {{form.password}} {% for error in form.password.errors %}
+        <small style="color: red">{{ error }}</small>
+        {% endfor %}
+        <input class="btn btn-primary mt-3" type="submit" value="Submit" />
+    </form>
+</div>
+
+{% endblock %}

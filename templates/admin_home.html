@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="wrapper">
+    <!-- {% include 'includes/header.html' %} -->
+    <div class="container">
+        {% for instance in instances %}
+        <div class="card" style="width: 18rem">
+            <img class="card-img-top" src="{{instance.image.url}}" alt="Card image cap" />
+            <div class="card-body">
+                <h4 class="card-title">{{instance.name}}</h4>
+                <h6 class="card-text">INR{{instance.price}}</h6>
+                <a href="{% url 'products:edit_product'  id=instance.id %}" class="btn btn-primary">Edit</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+</div>
